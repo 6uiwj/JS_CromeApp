@@ -52,15 +52,84 @@
 //const player = ["ming", 121212, false, "little bit"];
 
 //object를 사용하여보자.
+// const player = {
+//   name: "ming",
+//   points: 10,
+//   fat: true,
+// };
+
+// console.log(player);
+
+// player.points += 15;
+// console.log(player);
+
+//#2.7~8 Functions part One/Two
+
+//function을 사용하지 않을 때 같은 코드가 반복된다. 이것은 좋은 코드가 아니다.
+// console.log("Hello my name is ming");
+// console.log("Hello my name is Dal");
+// console.log("Hello my name is Shigatsu");
+// console.log("Hello my name is Flynn");
+
+//반복을 최소한으로 줄이기 위해 function을 사용해보자.
+//function은 코드를 캡슐화해서 실행을 여러번 할 수 있게 해준다.
+
+//argument : function을 실행하는 동안 어떤 정보를 function에 보낼 수 있는 방법
+// function sayHello(nameOfPerson) {
+//   console.log("Hello! my name is " + nameOfPerson);
+// }
+
+// sayHello("ming");
+// sayHello("faker");
+// sayHello("dal");
+
+// function sayHello(nameOfPerson, age) {
+//   console.log("Hello my name is " + nameOfPerson + " and I'm " + age);
+// }
+
+// sayHello("ming", 29);
+// sayHello("faker", 31);
+// sayHello("dal", 17);
+
+function plus(a, b) {
+  console.log(a + b);
+}
+
+// function divide(a, b) {
+//   console.log(a / b);
+// }
+// plus(8, 60);
+// divide(98, 20);
+
+//object와 function을 함께 사용해보자.
 const player = {
   name: "ming",
-  points: 10,
-  fat: true,
+  sayHello: function (otherPersonsName) {
+    console.log("hello " + otherPersonsName + " nice to meet you!");
+  },
 };
 
-console.log(player);
+console.log(player.name);
+player.sayHello("lynn");
+player.sayHello("nico");
 
-player.points += 15;
-console.log(player);
+//예제
+const calculator = {
+  plus: function (a, b) {
+    console.log(a + b);
+  },
+  minus: function (a, b) {
+    console.log(a - b);
+  },
+  devide: function (a, b) {
+    console.log(a / b);
+  },
+  multiply: function (a, b) {
+    console.log(a * b);
+  },
+};
 
-//#2.7 Functions part One
+calculator.plus(6, 4);
+calculator.minus(6, 4);
+calculator.devide(6, 4);
+calculator.multiply(6, 4);
