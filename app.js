@@ -133,3 +133,6 @@ calculator.plus(6, 4);
 calculator.minus(6, 4);
 calculator.devide(6, 4);
 calculator.multiply(6, 4);
+
+//#2.9 Recaf
+console.log(player, console);
