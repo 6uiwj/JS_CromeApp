@@ -91,9 +91,9 @@
 // sayHello("faker", 31);
 // sayHello("dal", 17);
 
-function plus(a, b) {
-  console.log(a + b);
-}
+// function plus(a, b) {
+//   console.log(a + b);
+// }
 
 // function divide(a, b) {
 //   console.log(a / b);
@@ -102,37 +102,87 @@ function plus(a, b) {
 // divide(98, 20);
 
 //object와 function을 함께 사용해보자.
-const player = {
-  name: "ming",
-  sayHello: function (otherPersonsName) {
-    console.log("hello " + otherPersonsName + " nice to meet you!");
-  },
-};
+// const player = {
+//   name: "ming",
+//   sayHello: function (otherPersonsName) {
+//     console.log("hello " + otherPersonsName + " nice to meet you!");
+//   },
+// };
 
-console.log(player.name);
-player.sayHello("lynn");
-player.sayHello("nico");
+// console.log(player.name);
+// player.sayHello("lynn");
+// player.sayHello("nico");
 
 //예제
+// const calculator = {
+//   plus: function (a, b) {
+//     alert(a + b);
+//   },
+//   minus: function (a, b) {
+//     alert(a - b);
+//   },
+//   divide: function (a, b) {
+//     alert(a / b);
+//   },
+//   multiply: function (a, b) {
+//     alert(a * b);
+//   },
+
+//   power: function (a, b) {
+//     alert(a ** b);
+//   },
+// };
+
+// console.log(calculator.plus(2, 3));
+
+// calculator.plus(6, 4);
+// calculator.minus(6, 4);
+// calculator.divide(6, 4);
+// calculator.multiply(6, 4);
+
+// //#2.9 Recaf
+// //console.log(player, console);
+
+// console.log(console);
+// function minusFive(potato) {
+//   console.log(potato - 5);
+// }
+// minusFive(5, 10, 12, 3, 2, 7, 3);
+
+//#2.11 return
+//우리는 이 계산에서 계산의 결과를 '코드'로 받고 싶다.
+//어떻게 해야 할까?
+// const age = 96;
+// function calculateKrAge(ageOfForeigner) {
+//   ageOfForeigner + 2;
+//   return "hello";
+// }
+// //krAge에 calculateKrAge를 통해 계산한 결과를 얻고 싶다.
+// const krAge = calculateKrAge(age);
+// //하지만 console.log에 krAge를 찍어봐도 원하는 결과가 나오지 않는다.
+// console.log(krAge);
+
 const calculator = {
   plus: function (a, b) {
-    console.log(a + b);
+    return a + b;
   },
   minus: function (a, b) {
-    console.log(a - b);
+    return a - b;
   },
-  devide: function (a, b) {
-    console.log(a / b);
+  divide: function (a, b) {
+    return a / b;
   },
   multiply: function (a, b) {
-    console.log(a * b);
+    return a * b;
+  },
+
+  power: function (a, b) {
+    return a ** b;
   },
 };
 
-calculator.plus(6, 4);
-calculator.minus(6, 4);
-calculator.devide(6, 4);
-calculator.multiply(6, 4);
-
-//#2.9 Recaf
-console.log(player, console);
+const plusResult = calculator.plus(2, 3);
+const minusResult = calculator.minus(plusResult, 10);
+const timesResult = calculator.multiply(10, minusResult);
+const divideResult = calculator.divide(timesResult, plusResult);
+const powerResult = calculator.power(divideResult, minusResult);
