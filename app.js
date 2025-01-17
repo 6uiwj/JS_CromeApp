@@ -164,9 +164,7 @@
 
 const calculator = {
   plus: function (a, b) {
-    console.log("hello");
     return a + b;
-    console.log("bye bye");
   },
   minus: function (a, b) {
     return a - b;
@@ -189,4 +187,20 @@ const plusResult = calculator.plus(2, 3);
 // const divideResult = calculator.divide(timesResult, plusResult);
 // const powerResult = calculator.power(divideResult, minusResult);
 
-//#2.12 Recap(복습)
+//#2.13 Conditional (조건문)
+//나이계산기를 만들어보고, 입력한 나이가 성인인지 아닌지 판단해보자.
+
+//1. 사용자에게 창을 띄워주는 함수 prompt()를 이용하여여 나이를 입력받자.
+//  prompt는 사용자에게 메시지를 담은 창을 띄우고, 사용자의 입력을 받는다.
+// const age = prompt("How old are you?");
+
+//데이터 타입확인
+// console.log(age, parseInt(age));
+
+//타입변환
+//console.log(typeof "15", typeof parseInt("15"));
+
+//이제 나이계산기를 만들어보자.
+//사용자로부터 나이를 입력받고, 입력값이 숫자가 아닌 경우(NaN), 메시지를 띄워주자.
+const age = parseInt(prompt("How old are you?")); //prompt로 입력받은 값을 숫자로 변환 후 age에 담음
+console.log(age);
