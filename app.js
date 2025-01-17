@@ -164,7 +164,9 @@
 
 const calculator = {
   plus: function (a, b) {
+    console.log("hello");
     return a + b;
+    console.log("bye bye");
   },
   minus: function (a, b) {
     return a - b;
@@ -182,7 +184,9 @@ const calculator = {
 };
 
 const plusResult = calculator.plus(2, 3);
-const minusResult = calculator.minus(plusResult, 10);
-const timesResult = calculator.multiply(10, minusResult);
-const divideResult = calculator.divide(timesResult, plusResult);
-const powerResult = calculator.power(divideResult, minusResult);
+// const minusResult = calculator.minus(plusResult, 10);
+// const timesResult = calculator.multiply(10, minusResult);
+// const divideResult = calculator.divide(timesResult, plusResult);
+// const powerResult = calculator.power(divideResult, minusResult);
+
+//#2.12 Recap(복습)
