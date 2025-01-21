@@ -205,14 +205,37 @@ const plusResult = calculator.plus(2, 3);
 const age = parseInt(prompt("How old are you?")); //prompt로 입력받은 값을 숫자로 변환 후 age에 담음
 //console.log(age);
 
-//#2.14 Conditional Part2
+//================#2.14/15 Conditional Part2,3=================
 //무언가가 NaN인지를 판별하는 방법을 배워보자. isNaN함수 (boolean값 반환)
 //console.log(isNaN(age));
 
 //이것을 조건문에 넣어보자
 //조건문 문법
-if (isNaN(age)) {
-  console.log("Please write a number");
-} else {
-  console.log("Thank you for writing your age.");
+if (isNaN(age) || age < 0) {
+  console.log("Please write a real positive number");
+} else if (age < 18) {
+  console.log("You are too young");
+} else if (age >= 18 && age <= 50) {
+  console.log("You can drink");
+} else if (age > 50 && age <= 80) {
+  console.log("You should exercise");
+} else if (age === 100) {
+  console.log("wow you are wise");
+} else if (age > 80) {
+  console.log("You can do whatever you want");
 }
+
+//and : &&
+//or : ||
+
+true || true === true;
+false || true === true;
+true || false === true;
+false || false === false;
+
+true && true === true;
+false && true === false;
+true && false === false;
+false && false === false;
+
+//#2.16 RECAP
