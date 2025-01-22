@@ -202,7 +202,7 @@ const plusResult = calculator.plus(2, 3);
 
 //이제 나이계산기를 만들어보자.
 //사용자로부터 나이를 입력받고, 입력값이 숫자가 아닌 경우(NaN), 메시지를 띄워주자.
-const age = parseInt(prompt("How old are you?")); //prompt로 입력받은 값을 숫자로 변환 후 age에 담음
+//const age = parseInt(prompt("How old are you?")); //prompt로 입력받은 값을 숫자로 변환 후 age에 담음
 //console.log(age);
 
 //================#2.14/15 Conditional Part2,3=================
@@ -211,19 +211,19 @@ const age = parseInt(prompt("How old are you?")); //prompt로 입력받은 값�
 
 //이것을 조건문에 넣어보자
 //조건문 문법
-if (isNaN(age) || age < 0) {
-  console.log("Please write a real positive number");
-} else if (age < 18) {
-  console.log("You are too young");
-} else if (age >= 18 && age <= 50) {
-  console.log("You can drink");
-} else if (age > 50 && age <= 80) {
-  console.log("You should exercise");
-} else if (age === 100) {
-  console.log("wow you are wise");
-} else if (age > 80) {
-  console.log("You can do whatever you want");
-}
+// if (isNaN(age) || age < 0) {
+//   console.log("Please write a real positive number");
+// } else if (age < 18) {
+//   console.log("You are too young");
+// } else if (age >= 18 && age <= 50) {
+//   console.log("You can drink");
+// } else if (age > 50 && age <= 80) {
+//   console.log("You should exercise");
+// } else if (age === 100) {
+//   console.log("wow you are wise");
+// } else if (age > 80) {
+//   console.log("You can do whatever you want");
+// }
 
 //and : &&
 //or : ||
@@ -237,5 +237,3 @@ true && true === true;
 false && true === false;
 true && false === false;
 false && false === false;
-
-//#2.16 RECAP
