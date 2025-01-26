@@ -19,3 +19,4 @@
 
 const title = document.querySelector("#hello");
 console.log(title);
+//const title = document.getElementsByTagName("h1");
