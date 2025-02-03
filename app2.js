@@ -20,43 +20,18 @@
 //const title = document.querySelector("#hello");
 //console.log(title);
 //const title = document.getElementsByTagName("h1");
-function plus(a, b) {
-  console.log(a + b);
+
+//#3.3 Events
+//class 이름이 "hello"인 div들 중애 첫 번째인 div 내부의 h1을 가져온다.
+const title = document.querySelector("div.hello:first-child h1");
+
+// console.dir(title);
+// title.style.color = "blue";
+
+function handleTitleClick() {
+  title.style.color = "blue";
 }
 
-function minus(a, b) {
-  console.log(a - b);
-}
-
-function multiply(a, b) {
-  console.log(a * b);
-}
-function divide(a, b) {
-  console.log(a / b);
-}
-
-function power(a, b) {
-  console.log(a ** b);
-}
-
-const cal = {
-  plus: function (a, b) {
-    console.log(a + b);
-  },
-  minus: function (a, b) {
-    console.log(a - b);
-  },
-  multiply: function (a, b) {
-    console.log(a * b);
-  },
-  divide: function (a, b) {
-    if (b === 0) {
-      console.log("can't divide");
-    } else {
-      console.log(a / b);
-    }
-  },
-  power: function (a, b) {
-    console.log(a ** b);
-  },
-};
+//클릭 이벤트
+//'클릭'이벤트가 발생하면 handleTitleClick을 실행하라!
+title.addEventListener("click", handleTitleClick);
