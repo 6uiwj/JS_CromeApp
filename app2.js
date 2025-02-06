@@ -23,15 +23,77 @@
 
 //#3.3 Events
 //class 이름이 "hello"인 div들 중애 첫 번째인 div 내부의 h1을 가져온다.
-const title = document.querySelector("div.hello:first-child h1");
+//const title = document.querySelector("div.hello:first-child h1");
 
-// console.dir(title);
-// title.style.color = "blue";
+// // console.dir(title);
+// // title.style.color = "blue";
 
-function handleTitleClick() {
-  title.style.color = "blue";
+// function handleTitleClick() {
+//   title.style.color = "blue";
+// }
+
+// //클릭 이벤트
+// //'클릭'이벤트가 발생하면 handleTitleClick을 실행하라!
+// title.addEventListener("click", handleTitleClick);
+
+//#3.4 Events part two
+//console.dir(title);
+// const title = document.querySelector("div.hello:first-child h1");
+// function handleMouseEnter() {
+//   title.innerText = "Mouse is here";
+// }
+// function handleTitleClick() {
+//   title.style.color = "blue";
+// }
+// function handleMouseLeave() {
+//   title.innerText = "Mouse is gone!";
+// }
+
+// //title.addEventListener("click", handleTitleClick);
+// //title.addEventListener("mouseenter", handleMouseEnter);
+// //title.addEventListener("mouseleave", handleMouseLeave);
+// //#3.5 Events
+
+// title.onclick = handleTitleClick;
+// title.onmouseenter = handleMouseEnter;
+// title.onmouseleave = handleMouseLeave;
+
+// //window의 eventlistener
+
+// function handleWindowResize() {
+//   document.body.style.backgroundColor = "tomato";
+// }
+
+// function handleWindowCopy() {
+//   alert("copier!");
+// }
+// //resize :화면 크기가 변경
+// window.addEventListener("resize", handleWindowResize);
+// window.addEventListener("copy", handleWindowCopy);
+
+// //Connetion Event(Wifi)
+// function handleWindowOffline() {
+//   alert("SOS no WIFI");
+// }
+
+// function handleWindowOnline() {
+//   alert("ALL GOOOD");
+// }
+// window.addEventListener("offline", handleWindowOffline);
+// window.addEventListener("online", handleWindowOnline);
+
+//#3.6 CSS in Javascript
+//h1 색깔 누를때마다 tomato <-> blue 로 변경되게 하기
+const h1 = document.querySelector("div.hello:first-child h1");
+function handleMouseEnter() {
+  const currentColor = h1.style.color; //현재 컬러
+  let newColor;
+  if (currentColor === "blue") {
+    newColor = "tomato";
+  } else {
+    newColor = "blue";
+  }
+  h1.style.color = newColor; //변경한 컬러를 h1에 적용
 }
 
-//클릭 이벤트
-//'클릭'이벤트가 발생하면 handleTitleClick을 실행하라!
-title.addEventListener("click", handleTitleClick);
+h1.addEventListener("click", handleMouseEnter);
