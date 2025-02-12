@@ -84,7 +84,7 @@
 
 //#3.6 CSS in Javascript
 //h1 색깔 누를때마다 tomato <-> blue 로 변경되게 하기
-const h1 = document.querySelector("div.hello:first-child h1");
+//const h1 = document.querySelector("div.hello:first-child h1");
 // function handleMouseEnter() {
 //   const currentColor = h1.style.color; //현재 컬러
 //   let newColor;
@@ -99,12 +99,29 @@ const h1 = document.querySelector("div.hello:first-child h1");
 //h1.addEventListener("click", handleMouseEnter);
 
 //#3.7 CSS in Javascipt part Two
+// function handleTitleClick() {
+//   const clickedClass = "active";
+//   if (h1.className === clickedClass) {
+//     h1.className = "";
+//   } else {
+//     h1.className = clickedClass;
+//   }
+// }
+// h1.addEventListener("click", handleTitleClick);
+
+//#3.8 CSS in Javascript part Three
+const h1 = document.querySelector("div.hello:first-child h1");
+
+// function handleTitleClick() {
+//   const clickedClass = "clicked";
+//   if (h1.classList.contains(clickedClass)) {
+//     h1.classList.remove(clickedClass);
+//   } else {
+//     h1.classList.add(clickedClass);
+//   }
+// }
+
 function handleTitleClick() {
-  const clickedClass = "active";
-  if (h1.className === clickedClass) {
-    h1.className = "";
-  } else {
-    h1.className = clickedClass;
-  }
+  h1.classList.toggle("clicked");
 }
 h1.addEventListener("click", handleTitleClick);
