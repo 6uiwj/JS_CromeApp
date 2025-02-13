@@ -8,11 +8,12 @@ const loginButton = loginForm.querySelector("button");
 
 function handleLoginBtnClick() {
   const username = loginInput.value;
-  if (username === "" || username === null) {
-    alert("Please write your name");
-  } else if (username.length > 15) {
-    alert("Your name is too long.");
-  }
+  //   if (username === "" || username === null) {
+  //     alert("Please write your name");
+  //   } else if (username.length > 15) {
+  //     alert("Your name is too long.");
+  //   }
+  console.log(username);
 }
 
 loginButton.addEventListener("click", handleLoginBtnClick);
