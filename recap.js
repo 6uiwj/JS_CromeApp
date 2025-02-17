@@ -1,11 +1,9 @@
-const title = document.querySelector("h1");
+const lf = document.getElementById("login-form");
+const btn = document.querySelector("button");
+const value = document.querySelector("input");
 
-function colorChange() {
-  if (title.style.color === "black") {
-    title.style.color = "orange";
-  } else {
-    title.style.color = "black";
-  }
+function clickEvent() {
+  console.log(value.value);
 }
 
-title.addEventListener("click", colorChange);
+btn.addEventListener("click", clickEvent);
