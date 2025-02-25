@@ -19,15 +19,33 @@
 // loginButton.addEventListener("click", handleLoginBtnClick);
 
 //#4.2 Events
+// const loginForm = document.querySelector("#login-form");
+// const loginInput = document.querySelector("#login-form input");
+
+// //브라우저의 기본 동작을 막아줌 (form이 submit되어서 페이지가 새로고침되는 것을 막아줌)
+// function onLoginSubmit(event) {
+//   event.preventDefault();
+//   console.log(loginInput.value);
+//   // const username = loginInput.value;
+//   // console.log(username);
+// }
+
+// loginForm.addEventListener("submit", onLoginSubmit);
+
+//#4.3
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
+const link = document.querySelector("a");
 
-//브라우저의 기본 동작을 막아줌 (form이 submit되어서 페이지가 새로고침되는 것을 막아줌)
 function onLoginSubmit(event) {
   event.preventDefault();
   console.log(loginInput.value);
-  // const username = loginInput.value;
-  // console.log(username);
+}
+
+function handleLinkClick(event) {
+  event.preventDefault();
+  console.dir(event);
 }
 
 loginForm.addEventListener("submit", onLoginSubmit);
+link.addEventListener("click", handleLinkClick);
