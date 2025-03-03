@@ -53,17 +53,18 @@
 // link.addEventListener("click", handleLinkClick);
 
 //#4.4~4.6
-const loginForm = document.querySelector("#login-form");
-const loginInput = document.querySelector("#login-form input");
-const greeting = document.querySelector("#greeting");
+const loginForm = document.querySelector("#login-form"); //form
+const loginInput = document.querySelector("#login-form input"); //input
+const greeting = document.querySelector("#greeting"); //h1
 
 const HIDDEN_CLASSNAME = "hidden"; //일반적으로 string만 포함된 변수는 대문자로 표기기
 const USERNAME_KEY = "username"; //"username"이 반복되므로 변수로 관리
 
 function onLoginSubmit(event) {
-  event.preventDefault();
-  loginForm.classList.add(HIDDEN_CLASSNAME);
-  const username = loginInput.value;
+  //submit 이벤트
+  event.preventDefault(); //기본 이벤트 막기
+  loginForm.classList.add(HIDDEN_CLASSNAME); //form 숨기기
+  const username = loginInput.value; //username = input 값
   localStorage.setItem(USERNAME_KEY, username); //로컬 스토리지에 username 저장
   paintGreeting(username); //form에 입력된 username 값을  가져옴
 }
