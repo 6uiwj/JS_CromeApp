@@ -52,21 +52,36 @@
 // loginForm.addEventListener("submit", onLoginSubmit);
 // link.addEventListener("click", handleLinkClick);
 
-//#4.4
+//#4.4~4.6
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
 const greeting = document.querySelector("#greeting");
 
 const HIDDEN_CLASSNAME = "hidden"; //일반적으로 string만 포함된 변수는 대문자로 표기기
+const USERNAME_KEY = "username"; //"username"이 반복되므로 변수로 관리
 
 function onLoginSubmit(event) {
   event.preventDefault();
   loginForm.classList.add(HIDDEN_CLASSNAME);
   const username = loginInput.value;
-  localStorage.setItem("username", username); //로컬 스토리지에 username 저장
-
-  greeting.innerText = "Hello " + username;
-  greeting.classList.remove(HIDDEN_CLASSNAME);
+  localStorage.setItem(USERNAME_KEY, username); //로컬 스토리지에 username 저장
+  paintGreeting(username); //form에 입력된 username 값을  가져옴
 }
 
 loginForm.addEventListener("submit", onLoginSubmit);
+
+function paintGreeting(username) {
+  greeting.innerText = `Hello ${username}`; //greeting에 text 추가 (localStorage에서 username 가져오기 )
+  greeting.classList.remove(HIDDEN_CLASSNAME); //greeting에 hidden 클래스 제거
+}
+
+const savedUsername = localStorage.getItem(USERNAME_KEY);
+console.log(savedUsername);
+
+if (savedUsername === null) {
+  //localStorage가 null이면
+  loginForm.classList.remove(HIDDEN_CLASSNAME); //hidden 클래스를 제거하고
+  loginForm.addEventListener("submit", onLoginSubmit); //이벤트 추가
+} else {
+  paintGreeting(savedUsername); //localStorage에 값이 있으면 그 값을 인자로 넣어줌
+}
