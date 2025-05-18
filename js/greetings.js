@@ -77,7 +77,6 @@ function paintGreeting(username) {
 }
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);
-console.log(savedUsername);
 
 if (savedUsername === null) {
   //localStorage(savedUsername)가 null이면 form을 보여준다.ㅣ
