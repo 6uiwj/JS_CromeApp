@@ -2,11 +2,14 @@ const toDoForm = document.getElementById("todo-form");
 const toDoInput = toDoForm.querySelector("input");
 // === document.querySelector("todo-form input");
 const toDoList = document.getElementById("todo-list");
+
+const TODOS_KEY = "todos";
+
 const toDos = []; //todo 목록을 저장할 array
 
 //toDos array의 내용을 localStorage에 저장하는 함수
 function saveToDos() {
-  localStorage.setItem("todos", JSON.stringify(toDos)); //array를 json문자열로 변환해서 storage에 저장
+  localStorage.setItem(TODOS_KEY, JSON.stringify(toDos)); //array를 json문자열로 변환해서 storage에 저장
 }
 
 //삭제하기 기능을 하는 function
@@ -45,3 +48,15 @@ function handleToDoSubmit(e) {
 
 //todoList 제출시 이벤트 만들어주기
 toDoForm.addEventListener("submit", handleToDoSubmit);
+
+// function sayHello(item) {
+//   console.log("this is the turn of " + item);
+// }
+
+//localStorage에서 toDo parsing하기
+const savedToDos = localStorage.getItem(TODOS_KEY);
+
+if (saveToDos) {
+  const parsedToDos = JSON.parse(savedToDos);
+  parsedToDos.forEach((item) => console.log("this is the turn of ", item));
+}
