@@ -5,7 +5,7 @@ const toDoList = document.getElementById("todo-list");
 
 const TODOS_KEY = "todos";
 
-const toDos = []; //todo 목록을 저장할 array
+let toDos = []; //todo 목록을 저장할 array
 
 //toDos array의 내용을 localStorage에 저장하는 함수
 function saveToDos() {
@@ -16,13 +16,17 @@ function saveToDos() {
 function deleteToDo(event) {
   const li = event.target.parentElement; //선택된 요소의 부모 element
   li.remove(); //요소 제거
+
+  toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+  saveToDos(); //요소 제거 후 다시 저장된 todo 호출
 }
 
 //입력된 TODO를 그리기
 function paintToDo(newToDo) {
   const li = document.createElement("li"); //li태그를 생성
+  li.id = newToDo.id;
   const span = document.createElement("span");
-  span.innerText = newToDo; //handleToDoSubmit으로부터 받아옴
+  span.innerText = newToDo.text; //handleToDoSubmit으로부터 받아옴
 
   const button = document.createElement("button"); //버튼 생성
   button.innerText = "❌";
@@ -41,8 +45,13 @@ function handleToDoSubmit(e) {
   const newToDo = toDoInput.value;
   //enter가 눌리면 input값 비우기
   toDoInput.value = "";
-  toDos.push(newToDo);
-  paintToDo(newToDo); //todo 그려주기
+
+  const newToDoObj = {
+    text: newToDo,
+    id: Date.now(),
+  };
+  toDos.push(newToDoObj);
+  paintToDo(newToDoObj); //todo 그려주기
   saveToDos(); //toDos arrays를 localStorage에 저장
 }
 
@@ -56,7 +65,8 @@ toDoForm.addEventListener("submit", handleToDoSubmit);
 //localStorage에서 toDo parsing하기
 const savedToDos = localStorage.getItem(TODOS_KEY);
 
-if (saveToDos) {
+if (savedToDos) {
   const parsedToDos = JSON.parse(savedToDos);
-  parsedToDos.forEach((item) => console.log("this is the turn of ", item));
+  toDos = parsedToDos;
+  parsedToDos.forEach(paintToDo); //painToDo를 parsedToDos 배열의 요소마다 실행
 }
